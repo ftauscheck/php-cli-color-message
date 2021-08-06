@@ -1,6 +1,10 @@
 <?php
 
-namespace Wujunze;
+/**
+  An fork of wujunze/php-cli-color package.
+  v1.0 = 
+  
+*/
 
 class Colors
 {
@@ -99,11 +103,11 @@ class Colors
     }
 
     /**
-     * 获取带颜色的文字.
+     * Return a collored string.
      *
-     * @param string      $string          black|dark_gray|blue|light_blue|green|light_green|cyan|light_cyan|red|light_red|purple|brown|yellow|light_gray|white
-     * @param string|null $foregroundColor 前景颜色 black|red|green|yellow|blue|magenta|cyan|light_gray
-     * @param string|null $backgroundColor 背景颜色 同$foregroundColor
+     * @param string      $string          
+     * @param string|null $foregroundColor black|dark_gray|blue|light_blue|green|light_green|cyan|light_cyan|red|light_red|purple|brown|yellow|light_gray|white
+     * @param string|null $backgroundColor black|red|green|yellow|blue|magenta|cyan|light_gray
      *
      * @return string
      */
@@ -127,42 +131,64 @@ class Colors
     }
 
     /**
-     * 输出提示信息.
+     * A regular message
      *
      * @param $msg
      */
     public static function notice($msg)
     {
-        fwrite(STDOUT, self::initColoredString($msg, 'light_gray').PHP_EOL);
+        fwrite(STDOUT, self::initColoredString($msg, 'light_gray'));
     }
 
     /**
-     * 输出错误信息.
+     * Error message
      *
      * @param $msg
      */
     public static function error($msg)
     {
-        fwrite(STDERR, self::initColoredString($msg, 'red').PHP_EOL);
+        fwrite(STDERR, self::initColoredString($msg, 'red'));
     }
 
     /**
-     * 输出警告信息.
+     * Fatal-Error message
+     *
+     * @param $msg
+     */
+    public static function fatalerror($msg)
+    {
+        fwrite(STDERR, self::initColoredString($msg, 'white', 'red'));
+    }
+    
+    /**
+     * Warning message.
      *
      * @param $msg
      */
     public static function warn($msg)
     {
-        fwrite(STDOUT, self::initColoredString($msg, 'yellow').PHP_EOL);
+        fwrite(STDOUT, self::initColoredString($msg, 'yellow'));
     }
 
     /**
-     * 输出成功信息.
+     * Success message.
      *
      * @param $msg
      */
     public static function success($msg)
     {
-        fwrite(STDOUT, self::initColoredString($msg, 'green').PHP_EOL);
+        fwrite(STDOUT, self::initColoredString($msg, 'green'));
     }
+    
+    /**
+     * Success message.
+     *
+     * @param $msg
+     */    
+    public static function head($msg)
+    {
+        fwrite(STDOUT, self::initColoredString($msg, 'white', 'blue'));
+    }
+    
 }
+?>
