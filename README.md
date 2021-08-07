@@ -4,20 +4,20 @@ Simple and easy to use the PHP command-line output of color
 ## How to use
 ```php
 <?php
-  include('color.php');
-  echo "\e[H\e[J";
+  include('color.php'); // It is currently not a Composer package (TODO).
+  echo "\e[H\e[J"; // Clear screen
   $colors = new Colors();
-	echo "\n".$colors->head("╔══════════════════════════════════════════════════════════════════════════════╗");
-	echo "\n".$colors->head("║                                                                              ║");
-	echo "\n".$colors->head("║     php-cli-color_v2 Library                                                 ║");
+  echo "\n".$colors->head("╔══════════════════════════════════════════════════════════════════════════════╗");
   echo "\n".$colors->head("║                                                                              ║");
-	echo "\n".$colors->head("║     ver: 1.0 - Initial release (after fork of wujunze/php-cli-color)         ║");
-	echo "\n".$colors->head("║                                                                              ║");
+  echo "\n".$colors->head("║     php-cli-color_v2 Library                                                 ║");
+  echo "\n".$colors->head("║                                                                              ║");
+  echo "\n".$colors->head("║     ver: 1.0 - Initial release (after fork of wujunze/php-cli-color)         ║");
+  echo "\n".$colors->head("║                                                                              ║");
   echo "\n".$colors->head("╟──────────────────────────────────────────────────────────────────────────────╢");
   echo "\n".$colors->head("║                                                                              ║");
-	echo "\n".$colors->head("║        https://github.com/ftauscheck/php-cli-color_v2                        ║");
-	echo "\n".$colors->head("║                                                                              ║");
-	echo "\n".$colors->head("╚══════════════════════════════════════════════════════════════════════════════╝")."\n\n";
+  echo "\n".$colors->head("║        https://github.com/ftauscheck/php-cli-color_v2                        ║");
+  echo "\n".$colors->head("║                                                                              ║");
+  echo "\n".$colors->head("╚══════════════════════════════════════════════════════════════════════════════╝")."\n\n";
 
   echo "\n".$colors->notice("Notice message.");
   echo "\n".$colors->warn("Warning message.");
