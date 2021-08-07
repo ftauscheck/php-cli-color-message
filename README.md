@@ -1,10 +1,14 @@
 # php-cli-color-message
-Simple and easy to use the PHP command-line output of color
+Simple and easy to use the PHP command-line output of color.
+
+## TODO:
+* It is currently not a Composer package
+* Add shortcuts to special simbols
 
 ## How to use
 ```php
 <?php
-  include('color.php'); // It is currently not a Composer package (TODO).
+  include('color.php'); // 
   echo "\e[H\e[J"; // Clear screen
   $colors = new Colors();
   echo "\n".$colors->head("╔══════════════════════════════════════════════════════════════════════════════╗");
@@ -36,4 +40,4 @@ Simple and easy to use the PHP command-line output of color
 ![code run result](https://github.com/ftauscheck/php-cli-color-message/blob/2bc704553d735faa45967f8f52144dbc940997be/example/cmd_example.png)
 
 ## Run result on Linux (PUTTY):
-![code run result](https://github.com/ftauscheck/php-cli-color-message/blob/2bc704553d735faa45967f8f52144dbc940997be/example/linux_example.png)
+![code run result](https://github.com/ftauscheck/php-cli-color-message/blob/81313905e317e7f96f364056e388ad2717e9b213/example/linux_example.png)
