@@ -1,32 +1,39 @@
-# php-cli-color
+# php-cli-color-message
 Simple and easy to use the PHP command-line output of color
-
-
-
-[![Build Status](https://travis-ci.org/wujunze/php-cli-color.svg?branch=master)](https://travis-ci.org/wujunze/php-cli-color)
-[![codecov](https://codecov.io/gh/wujunze/php-cli-color/branch/master/graph/badge.svg)](https://codecov.io/gh/wujunze/php-cli-color)
-[![Latest Stable Version](https://poser.pugx.org/wujunze/php-cli-color/v/stable)](https://packagist.org/packages/wujunze/php-cli-color) [![Total Downloads](https://poser.pugx.org/wujunze/php-cli-color/downloads)](https://packagist.org/packages/wujunze/php-cli-color) [![License](https://poser.pugx.org/wujunze/php-cli-color/license)](https://packagist.org/packages/wujunze/php-cli-color)
-
-## Installation
-
-`composer require wujunze/php-cli-color`
 
 ## How to use
 ```php
 <?php
+  include('color.php');
+  echo "\e[H\e[J";
+  $colors = new Colors();
+	echo "\n".$colors->head("╔══════════════════════════════════════════════════════════════════════════════╗");
+	echo "\n".$colors->head("║                                                                              ║");
+	echo "\n".$colors->head("║     php-cli-color_v2 Library                                                 ║");
+  echo "\n".$colors->head("║                                                                              ║");
+	echo "\n".$colors->head("║     ver: 1.0 - Initial release (after fork of wujunze/php-cli-color)         ║");
+	echo "\n".$colors->head("║                                                                              ║");
+  echo "\n".$colors->head("╟──────────────────────────────────────────────────────────────────────────────╢");
+  echo "\n".$colors->head("║                                                                              ║");
+	echo "\n".$colors->head("║        https://github.com/ftauscheck/php-cli-color_v2                        ║");
+	echo "\n".$colors->head("║                                                                              ║");
+	echo "\n".$colors->head("╚══════════════════════════════════════════════════════════════════════════════╝")."\n\n";
 
-require_once __DIR__ . './../vendor/autoload.php';
-
-$colors = new Wujunze\Colors();
-// Test some basic printing with Colors class
-echo $colors->getColoredString("Testing Colors class, this is purple string on yellow background.", "purple", "yellow");
-echo $colors->getColoredString("Testing Colors class, this is blue string on light gray background.", "blue", "light_gray");
-echo $colors->getColoredString("Testing Colors class, this is red string on black background.", "red", "black");
-echo $colors->getColoredString("Testing Colors class, this is cyan string on green background.", "cyan", "green");
-echo $colors->getColoredString("Testing Colors class, this is cyan string on default background.", "cyan");
-echo $colors->getColoredString("Testing Colors class, this is default string on cyan background.", null, "cyan");
+  echo "\n".$colors->notice("Notice message.");
+  echo "\n".$colors->warn("Warning message.");
+  echo "\n".$colors->error("Error message.");
+  echo "\n".$colors->fatalerror("Fatal Error message.");
+  echo "\n".$colors->success("Success message");
+  
+  echo "\n".$colors->getColoredString("Colored string: purple string on yellow background.", "purple", "yellow");
+  echo "\n".$colors->getColoredString("Colored string: blue string on light gray background.", "blue", "light_gray");
+  echo "\n".$colors->getColoredString("Colored string: red string on black background (error function).", "red", "black");
+  echo "\n";
+?>
 ```
 
-## run result
+## Run result on Windows 10 (CMD.EXE):
+![code run result](https://github.com/ftauscheck/php-cli-color-message/blob/2bc704553d735faa45967f8f52144dbc940997be/example/cmd_example.png)
 
-![code run result](https://camo.githubusercontent.com/5509dd50a0f9fb194a6bc2a36153934e3d74e1d9/687474703a2f2f7777342e73696e61696d672e636e2f6c617267652f303036306c6d3754677931666470747672373062646a33306e6c3037327a6c642e6a7067)
+## Run result on Linux (PUTTY):
+![code run result](https://github.com/ftauscheck/php-cli-color-message/blob/2bc704553d735faa45967f8f52144dbc940997be/example/linux_example.png)
